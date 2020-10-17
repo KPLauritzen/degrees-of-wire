@@ -37,8 +37,9 @@ class BZ2TextDataSet(AbstractDataSet):
         with bz2.open(self._filepath, **self.load_args) as f:
             return f.readlines()
 
-    def _save(self):
-        pass
+    def _save(obj, self):
+        with open(self.filepath, "wb") as f:
+            f.write(obj)
 
     def _exists(self) -> bool:
         return Path(self._filepath.as_posix()).exists()
