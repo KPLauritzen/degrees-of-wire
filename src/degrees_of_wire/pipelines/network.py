@@ -6,14 +6,14 @@ from kedro.pipeline import Pipeline, node
 
 
 def create_graph(lines: List[dict]) -> nx.Graph:
-    G = nx.Graph()
+    G = nx.MultiGraph()
     for line in lines:
         if len(line["cast"]) < 2:
             continue
         else:
             connections = itertools.combinations(line["cast"], 2)
             for con in connections:
-                G.add_edge(*con, work=line["title"])
+                G.add_edge(*con, work=f"{line['title']} ({line['year']}")
     return G
 
 

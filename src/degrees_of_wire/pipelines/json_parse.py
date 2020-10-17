@@ -13,21 +13,23 @@ def json_parse(lines: List[str], n_lines) -> List[dict]:
 def clean_single_name(name: str) -> str:
     if name[0] == "[" and name[-1] == "]":
         is_link = True
-        name.strip("[]")
+        name = name.strip("[]")
     else:
         is_link = False
 
     if is_link and "|" in name:
         # This is a labelled link. Use first part. That is canonical link
         name = name.split("|")[0]
-
     return name
 
 def clean_names_in_line(line: dict):
     name_keys = ["cast", "directors"]
     for key in name_keys:
-        cleaned = [clean_single_name(name) for name in line[key]]
-        line[key] = cleaned
+        try:
+            cleaned = [clean_single_name(name) for name in line[key]]
+            line[key] = cleaned
+        except KeyError:
+            pass
     return line
 
 
