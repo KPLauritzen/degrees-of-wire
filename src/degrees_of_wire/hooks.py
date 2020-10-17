@@ -36,6 +36,8 @@ from kedro.pipeline import Pipeline
 from kedro.versioning import Journal
 
 from degrees_of_wire.pipelines.raw_data import create_raw_pipeline
+from degrees_of_wire.pipelines.json_parse import create_json_pipeline
+from degrees_of_wire.pipelines.network import create_network_pipeline
 
 class ProjectHooks:
     @hook_impl
@@ -47,8 +49,17 @@ class ProjectHooks:
 
         """
         raw_pipeline = create_raw_pipeline()
+        json_pipeline = create_json_pipeline()
+        network_pipeline = create_network_pipeline()
+
+        process_pipeline = json_pipeline + network_pipeline
+        all_pipeline = raw_pipeline + json_pipeline + network_pipeline
         return {
             "get_raw_data": raw_pipeline,
+            "all": all_pipeline,
+            "network": network_pipeline,
+            "process": process_pipeline,
+            "json": json_pipeline,
             "__default__": Pipeline([])
         }
 

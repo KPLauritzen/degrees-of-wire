@@ -14,3 +14,4 @@ wheel==0.32.2
 pandas
 networkx
 matplotlib
+kedro-viz

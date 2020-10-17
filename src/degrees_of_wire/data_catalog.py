@@ -34,11 +34,12 @@ class BZ2TextDataSet(AbstractDataSet):
     def _load(self) -> pd.DataFrame:
         if self.load_args is None:
             self.load_args = {}
+
         with bz2.open(self._filepath, **self.load_args) as f:
             return f.readlines()
 
-    def _save(obj, self):
-        with open(self.filepath, "wb") as f:
+    def _save(self, obj):
+        with open(self._filepath, "wb") as f:
             f.write(obj)
 
     def _exists(self) -> bool:

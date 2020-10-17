@@ -1,8 +1,9 @@
 from kedro.pipeline import Pipeline, node
-
+import requests
 
 def download_file(url):
-    return url
+    file = requests.get(url)
+    return file.content
 
 def create_raw_pipeline():
     return Pipeline([
@@ -12,3 +13,4 @@ def create_raw_pipeline():
             "movies_raw"
         )
     ])
+

@@ -10,3 +10,7 @@ movies_raw:
   load_args:
     mode: "rt"
     encoding: "utf-8"
+
+movie_graph:
+  type: pickle.PickleDataSet
+  filepath: data/03_primary/movie_graph.pkl
