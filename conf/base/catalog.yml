@@ -1,0 +1,15 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
+
+test:
+  type: degrees_of_wire.data_catalog.BetterCSVDataSet
+  filepath: data/01_raw/test.csv
+
+movies_raw:
+  type: degrees_of_wire.data_catalog.BZ2TextDataSet
+  filepath: data/01_raw/data.txt.bz2
+  load_args:
+    mode: "rt"
+    encoding: "utf-8"

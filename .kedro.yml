@@ -1,0 +1,6 @@
+context_path: degrees_of_wire.run.ProjectContext
+project_name: "Degrees of The Wire"
+project_version: "0.16.5"
+package_name: "degrees_of_wire"
+hooks:
+  - degrees_of_wire.hooks.project_hooks
