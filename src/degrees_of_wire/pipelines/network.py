@@ -13,7 +13,8 @@ def create_graph(lines: List[dict]) -> nx.Graph:
         else:
             connections = itertools.combinations(line["cast"], 2)
             for con in connections:
-                G.add_edge(*con, work=f"{line['title']} ({line['year']}")
+                #G.add_edge(*con, work=f"{line['title']} ({line['year']}")
+                G.add_edge(*con, work=f"{line['title']}")
     return G
 
 
