@@ -16,28 +16,31 @@ binaryornot==0.4.4        # via cookiecutter
 black==v19.10b0           # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
 bleach==3.2.1             # via nbconvert
 cachetools==4.1.1         # via kedro
-certifi==2020.6.20        # via requests
+certifi==2020.6.20        # via matplotlib, requests
 cffi==1.14.3              # via argon2-cffi
 chardet==3.0.4            # via binaryornot, requests
-click==7.1.2              # via black, cookiecutter, kedro, pip-tools
+click==7.1.2              # via black, cookiecutter, flask, kedro, pip-tools
 colorama==0.4.4           # via ipython, pytest
 cookiecutter==1.6.0       # via kedro
 coverage==5.3             # via pytest-cov
+cycler==0.10.0            # via matplotlib
 decorator==4.4.2          # via ipython, networkx
 defusedxml==0.6.0         # via nbconvert
 entrypoints==0.3          # via nbconvert
 flake8==3.8.4             # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
+flask==1.1.2              # via kedro-viz
 fsspec==0.6.3             # via kedro
 future==0.18.2            # via cookiecutter
 idna==2.10                # via requests
 ipykernel==5.3.4          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
 ipython-genutils==0.2.0   # via jupyterlab, nbformat, notebook, qtconsole, traitlets
-ipython==7.18.1           # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in, ipykernel, ipywidgets, jupyter-console
+ipython==7.18.1           # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in, ipykernel, ipywidgets, jupyter-console, kedro-viz
 ipywidgets==7.5.1         # via jupyter
 isort==4.3.21             # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
+itsdangerous==1.1.0       # via flask
 jedi==0.17.2              # via ipython
 jinja2-time==0.2.0        # via cookiecutter
-jinja2==2.11.2            # via cookiecutter, jinja2-time, nbconvert, notebook
+jinja2==2.11.2            # via cookiecutter, flask, jinja2-time, nbconvert, notebook
 jmespath==0.10.0          # via kedro
 jsonschema==3.2.0         # via jupyterlab-launcher, nbformat
 jupyter-client==6.1.7     # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in, ipykernel, jupyter-console, kedro, nbclient, notebook, qtconsole
@@ -47,8 +50,11 @@ jupyter==1.0.0            # via -r C:\Users\Kasper\degrees-of-wire\src\requireme
 jupyterlab-launcher==0.10.5  # via jupyterlab
 jupyterlab-pygments==0.1.2  # via nbconvert
 jupyterlab==0.31.1        # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
-kedro==0.16.5             # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
+kedro-viz==3.5.1          # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
+kedro==0.16.5             # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in, kedro-viz
+kiwisolver==1.2.0         # via matplotlib
 markupsafe==1.1.1         # via jinja2
+matplotlib==3.3.2         # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
 mccabe==0.6.1             # via flake8
 mistune==0.8.4            # via nbconvert
 more-itertools==8.5.0     # via pytest
@@ -59,13 +65,14 @@ nbstripout==0.3.3         # via -r C:\Users\Kasper\degrees-of-wire\src\requireme
 nest-asyncio==1.4.1       # via nbclient
 networkx==2.5             # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
 notebook==6.1.4           # via jupyter, jupyterlab, jupyterlab-launcher, widgetsnbextension
-numpy==1.19.2             # via pandas
+numpy==1.19.2             # via matplotlib, pandas
 packaging==20.4           # via bleach, pytest
 pandas==1.1.3             # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
 pandocfilters==1.4.2      # via nbconvert
 parso==0.7.1              # via jedi
 pathspec==0.8.0           # via black
 pickleshare==0.7.5        # via ipython
+pillow==8.0.0             # via matplotlib
 pip-tools==5.3.1          # via kedro
 pluggy==0.13.1            # via kedro, pytest
 poyo==0.5.0               # via cookiecutter
@@ -76,12 +83,12 @@ pycodestyle==2.6.0        # via flake8
 pycparser==2.20           # via cffi
 pyflakes==2.2.0           # via flake8
 pygments==2.7.1           # via ipython, jupyter-console, jupyterlab-pygments, nbconvert, qtconsole
-pyparsing==2.4.7          # via packaging
+pyparsing==2.4.7          # via matplotlib, packaging
 pyrsistent==0.17.3        # via jsonschema
 pytest-cov==2.10.1        # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
 pytest-mock==1.13.0       # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
 pytest==5.4.3             # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in, pytest-cov, pytest-mock
-python-dateutil==2.8.1    # via arrow, jupyter-client, pandas
+python-dateutil==2.8.1    # via arrow, jupyter-client, matplotlib, pandas
 python-json-logger==0.1.11  # via kedro
 pytz==2020.1              # via pandas
 pywin32==228              # via jupyter-core
@@ -92,8 +99,9 @@ qtconsole==4.7.7          # via jupyter
 qtpy==1.9.0               # via qtconsole
 regex==2020.10.15         # via black
 requests==2.24.0          # via cookiecutter
+semver==2.11.0            # via kedro-viz
 send2trash==1.5.0         # via notebook
-six==1.15.0               # via argon2-cffi, bleach, jsonschema, packaging, pip-tools, python-dateutil
+six==1.15.0               # via argon2-cffi, bleach, cycler, jsonschema, packaging, pip-tools, python-dateutil
 terminado==0.9.1          # via notebook
 testpath==0.4.4           # via nbconvert
 toml==0.10.1              # via black
@@ -104,6 +112,7 @@ typed-ast==1.4.1          # via black
 urllib3==1.25.10          # via requests
 wcwidth==0.2.5            # via prompt-toolkit, pytest
 webencodings==0.5.1       # via bleach
+werkzeug==1.0.1           # via flask
 wheel==0.32.2             # via -r C:\Users\Kasper\degrees-of-wire\src\requirements.in
 whichcraft==0.6.1         # via cookiecutter
 widgetsnbextension==3.5.1  # via ipywidgets
